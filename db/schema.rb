@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_13_222213) do
+ActiveRecord::Schema.define(version: 2020_06_23_164952) do
+
+  create_table "get_emails_rules", force: :cascade do |t|
+    t.string "abc"
+    t.string "def"
+    t.integer "ghi"
+    t.datetime "something_at"
+    t.string "something_color"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "hellos", force: :cascade do |t|
     t.integer "age"

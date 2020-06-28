@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.4'
 
-gem 'rails', '~> 6.0.3', '>= 6.0.3.1'
+gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 gem 'sqlite3', '~> 1.4'
 gem 'puma', '~> 4.1'
 gem 'sass-rails', '>= 6'
@@ -31,7 +31,12 @@ end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'common-core-js', path: '/Users/jason/Work/CommonCoreJS/rails-common-core-js'
+# gem 'common-core-js', '= 0.0.1.alpha' # , path: '/Users/jason/Work/CommonCoreJS/rails-common-core-js'
+gem 'common_core_js' , path: '/Users/jason/Work/CommonCoreJS/rails-common-core-js'
+gem 'nonschema_migrations', path: '/Users/jason/Work/Nonschema Migrations/nonschema_migrations'
 
-gem "haml-rails"
+
+
+# gem 'kaminari'
+# gem 'haml-rails'
 

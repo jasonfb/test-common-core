@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  abc: MyString
+  def: MyString
+  ghi: 1
+  something_at: 2020-06-23 12:49:52
+  something_color: MyString
+
+two:
+  abc: MyString
+  def: MyString
+  ghi: 1
+  something_at: 2020-06-23 12:49:52
+  something_color: MyString

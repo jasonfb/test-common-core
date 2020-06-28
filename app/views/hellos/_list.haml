@@ -1,0 +1,20 @@
+
+= link_to "New hello", hellos_path(), disable_with: "Loading...", remote: true, class: "new-hello-button btn btn-primary pull-right"
+
+.clearfix
+.new-hello-form{style: "display: none; position: relative;"}
+
+
+
+%table.table.table-striped.hello-table
+  %thead
+    %tr
+      %th{:scope => "col"} Age      %th{:scope => "col"} Name      %th{:scope => "col"} Text      %th{:scope => "col"} Gender
+
+
+
+  %tbody
+    - if hellos.empty?
+      None
+    - hellos.each do |hello|
+      = render partial: 'hello/line', locals: {hello: hello,  }
