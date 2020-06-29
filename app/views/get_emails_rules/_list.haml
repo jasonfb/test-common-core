@@ -1,20 +1,0 @@
-
-= link_to "New get emails rule", dashboard_get_emails_hook_get_emails_rule_path(get_emails_hook), disable_with: "Loading...", remote: true, class: "new-get_emails_rule-button btn btn-primary pull-right"
-
-.clearfix
-.new-get_emails_rule-form{style: "display: none; position: relative;"}
-
-
-
-%table.table.table-striped.get_emails_rule-table
-  %thead
-    %tr
-      %th{:scope => "col"} Abc      %th{:scope => "col"} Def      %th{:scope => "col"} Ghi      %th{:scope => "col"} Something at      %th{:scope => "col"} Something color
-
-
-
-  %tbody
-    - if get_emails_rules.empty?
-      None
-    - get_emails_rules.each do |get_emails_rule|
-      = render partial: 'dashboard/get_emails_rule/line', locals: {get_emails_rule: get_emails_rule, get_emails_hook: @get_emails_hook }
