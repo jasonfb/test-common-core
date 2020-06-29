@@ -31,12 +31,6 @@ end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-# gem 'common-core-js', '= 0.0.1.alpha' # , path: '/Users/jason/Work/CommonCoreJS/rails-common-core-js'
-gem 'common_core_js' , path: '/Users/jason/Work/CommonCoreJS/rails-common-core-js'
-gem 'nonschema_migrations', path: '/Users/jason/Work/Nonschema Migrations/nonschema_migrations'
-
-
-
-# gem 'kaminari'
-# gem 'haml-rails'
-
+gem 'common_core_js',  path: '/Users/jason/Work/CommonCoreJS/common_core_js/'
+gem 'nonschema_migrations'
+gem 'devise'

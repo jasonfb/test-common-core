@@ -1,5 +1,8 @@
 class HellosController < ApplicationController
 
+  before_action :authenticate_user!
+
+
 
   before_action :load_hello, only: [:show, :edit, :update, :destroy]
 
@@ -7,12 +10,11 @@ class HellosController < ApplicationController
   
 
   def load_hello
-    @hello = Hello.find(params[:id])
+    @hello = current_user.hellos.find(params[:id])
   end
 
   def index
-    @hellos = Hello.where(Hello.arel_table[:email].matches("%#{@__general_string}%"))
-                            .page(params[:page])
+    @hellos = current_user.hellos.page(params[:page])
 
     respond_to do |format|
       format.js
@@ -21,14 +23,14 @@ class HellosController < ApplicationController
   end
 
   def new
-    @hello = Hello.new()
+    @hello = Hello.new(user: current_user)
     respond_to do |format|
       format.js
     end
   end
 
   def create
-    @hello = Hello.create(hello_params)
+    @hello = Hello.create(hello_params.merge!(user: current_user))
     respond_to do |format|
       if @hello.save
         format.js
@@ -74,12 +76,24 @@ class HellosController < ApplicationController
   end
 
   def hello_params
-    params.require(:hello).permit( [:age, :name, :text, :gender_id] )
+    params.require(:hello).permit( [:age, :name, :text, :gender_id, :user_id] )
   end
 
   def default_colspan
-    4
+    5
   end
+
+  def namespace
+    
+      ""
+    
+  end
+
+
+  def common_scope
+    @nested_args
+  end
+
 end
 
 
