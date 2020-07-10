@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_29_183356) do
+ActiveRecord::Schema.define(version: 2020_07_10_015552) do
 
   create_table "get_emails_rules", force: :cascade do |t|
     t.string "abc"
@@ -27,6 +27,15 @@ ActiveRecord::Schema.define(version: 2020_06_29_183356) do
     t.string "name"
     t.text "text", limit: 700000
     t.integer "gender_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+  end
+
+  create_table "things", force: :cascade do |t|
+    t.string "a"
+    t.integer "b"
+    t.datetime "c_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"

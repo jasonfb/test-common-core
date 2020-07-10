@@ -4,4 +4,11 @@ Rails.application.routes.draw do
 
   resources :hellos
 
+
+  namespace :dashboard do
+    resources :get_emails_rules
+    resources :things
+  end
+
+
 end

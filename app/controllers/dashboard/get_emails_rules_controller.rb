@@ -1,40 +1,31 @@
-class GetEmailsRuleControllerController < ApplicationController
-
- 
-  before_action :load_get_emails_hook 
+class Dashboard::GetEmailsRulesController < ApplicationController
+  before_action :authenticate_user!
   before_action :load_get_emails_rule, only: [:show, :edit, :update, :destroy]
 
 
-   
-      
-  def load_get_emails_hook
-    @get_emails_hook = current_account.get_emails_hooks.find(params[:get_emails_hook_id])
-  end 
+  
 
   def load_get_emails_rule
-    @get_emails_rule = @get_emails_hook.get_emails_rules.find(params[:id])
+    @get_emails_rule = current_user.get_emails_rules.find(params[:id])
   end
 
   def index
-    @get_emails_rules = @get_emails_hook.get_emails_rules
-                            .where(GetEmailsRule.arel_table[:email].matches("%#{@__general_string}%"))
-                            .page(params[:page])
+    @get_emails_rules = current_user.get_emails_rules.page(params[:page])
 
     respond_to do |format|
       format.js
-      # format.html {render 'dashboard/dashboard/all_get_emails_rules.haml'}
     end
   end
 
   def new
-    @get_emails_rule = GetEmailsRule.new(account: current_account)
+    @get_emails_rule = GetEmailsRule.new(user: current_user)
     respond_to do |format|
       format.js
     end
   end
 
   def create
-    @get_emails_rule = GetEmailsRule.create(get_emails_rule_params.merge!(account: current_account))
+    @get_emails_rule = GetEmailsRule.create(get_emails_rule_params.merge!(user: current_user))
     respond_to do |format|
       if @get_emails_rule.save
         format.js
@@ -86,6 +77,18 @@ class GetEmailsRuleControllerController < ApplicationController
   def default_colspan
     5
   end
+
+  def namespace
+    
+      "dashboard/"
+    
+  end
+
+
+  def common_scope
+    @nested_args
+  end
+
 end
 
 

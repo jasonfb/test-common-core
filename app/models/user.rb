@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
 
   has_many :hellos
+
+  has_many :things
 end
