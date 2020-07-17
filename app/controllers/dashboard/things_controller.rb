@@ -18,7 +18,6 @@ class Dashboard::ThingsController < ApplicationController
 
     respond_to do |format|
       format.js
-      format.html {render 'all.haml'}
     end
   end
 
