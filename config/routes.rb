@@ -9,6 +9,4 @@ Rails.application.routes.draw do
     resources :get_emails_rules
     resources :things
   end
-
-
 end

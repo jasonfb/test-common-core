@@ -1,4 +1,4 @@
-class Dashboard::ThingsController < ApplicationController
+class ThingsController < ApplicationController
 
   before_action :authenticate_user!
 
@@ -18,7 +18,6 @@ class Dashboard::ThingsController < ApplicationController
 
     respond_to do |format|
       format.js
-      format.html {render 'all.haml'}
     end
   end
 
@@ -83,7 +82,7 @@ class Dashboard::ThingsController < ApplicationController
 
   def namespace
     
-      "dashboard/"
+      ""
     
   end
 

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Dashboard::ThingsController do
+describe ThingsController do
   render_views
   let(:current_user) {create(:user)}
   let(:thing) {create(:thing, user: current_user )}
@@ -35,7 +35,7 @@ describe Dashboard::ThingsController do
         post :create, xhr: true, format: 'js', params: {
           
             thing: {
-                a: 'Koala', b: '969', c_at: '2020-08-02 09:00:56 -0400', user_id: '106'
+                a: 'Porpoise', b: '643', c_at: '2020-07-31 18:38:43 -0400', user_id: '203'
         }}
       }.to change { Thing.all.count }.by(1)
       assert_response :ok
@@ -76,7 +76,7 @@ describe Dashboard::ThingsController do
             
             id: thing.id,
             thing: {
-                a: 'Kangaroo', b: '110', c_at: '2020-08-04 09:00:56 -0400', user_id: '612'
+                a: 'Shrew', b: '714', c_at: '2020-08-03 18:38:43 -0400', user_id: '208'
             }}
 
       assert_response :ok
@@ -87,7 +87,7 @@ describe Dashboard::ThingsController do
     #       params: {
     #         id: thing.id,
     #         thing: {
-    #           a: 'Lobster', b: '92', c_at: '2020-07-31 09:00:56 -0400', user_id: '105'
+    #           a: 'Coyote', b: '129', c_at: '2020-07-31 18:38:43 -0400', user_id: '211'
     #       }}
     #
     #   assert_response :ok

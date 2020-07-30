@@ -1,5 +1,5 @@
 
-= link_to "New thing", new_dashboard_thing_path(), disable_with: "Loading...", remote: true, class: "new-thing-button btn btn-primary pull-right"
+= link_to "New thing", new_thing_path(), disable_with: "Loading...", remote: true, class: "new-thing-button btn btn-primary pull-right"
 
 .clearfix
 .new-thing-form{style: "display: none; position: relative;"}
@@ -17,4 +17,4 @@
     - if things.empty?
       None
     - things.each do |thing|
-      = render partial: 'dashboard/things/line', locals: {thing: thing,  }
+      = render partial: 'thing/line', locals: {thing: thing,  }

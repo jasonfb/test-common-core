@@ -1,0 +1,23 @@
+.row
+  .form-group.col-md-4
+    = f.text_field :a, size: 40, class: 'form-control'
+    %label.form-text
+      A
+
+.row
+  .form-group.col-md-4
+    = f.text_field :b, class: 'form-control', size: 4, type: 'number'
+    %label.form-text
+      B
+
+.row
+  .form-group.col-md-4
+    = f.text_field :c_at, class: 'form-control', type: 'datetime-local'
+    %label.form-text
+      C at
+
+.row
+  .form-group.col-md-4
+    = f.collection_select(:user_id, User.all, :id, :to_label, {:prompt => true}, class: 'form-control')
+    %label.small.form-text.text-muted
+      User

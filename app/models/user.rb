@@ -8,4 +8,9 @@ class User < ApplicationRecord
   has_many :hellos
 
   has_many :things
+
+
+  def to_label
+    email
+  end
 end
