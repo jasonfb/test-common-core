@@ -1,1 +1,4 @@
-= render partial: "dashboard/things/list", locals: {things: current_user.things.order("created_at DESC").page(1)}
+.container-fluid
+  .row
+    .col-md-12
+      = render partial: "dashboard/things/list", locals: {things: current_user.things.order("created_at DESC").page(1)}

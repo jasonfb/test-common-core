@@ -1,0 +1,11 @@
+%tr{'data-id': thing.id, 'data-edit': 'false'}
+  %td
+    = thing.a
+  %td
+    = thing.b
+  %td
+    = thing.c_at
+  %td
+    = thing.user.to_label
+  %td
+    = link_to "Edit <i class='fa fa-1x fa-list-alt'></i>".html_safe, edit_dashboard_thing_path(thing), remote: true , disable_with: "Loading...", class: "edit-thing-button btn btn-primary pull-right "

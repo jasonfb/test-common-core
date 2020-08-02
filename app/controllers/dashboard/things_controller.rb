@@ -55,7 +55,7 @@ class Dashboard::ThingsController < ApplicationController
 
   def update
     respond_to do |format|
-      if !@thing.save
+      if !@thing.update(thing_params)
         flash[:alert] = "Thing could not be saved"
       end
       format.js {}

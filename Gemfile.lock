@@ -2,9 +2,13 @@ PATH
   remote: /Users/jason/Work/CommonCoreJS/common_core_js
   specs:
     common_core_js (0.1.1)
+      bootsnap
+      bootstrap
+      font-awesome-rails
       haml-rails
       kaminari
       rails
+      sass-rails
 
 GEM
   remote: https://rubygems.org/
@@ -66,10 +70,16 @@ GEM
       zeitwerk (~> 2.2, >= 2.2.2)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    autoprefixer-rails (9.7.6)
+      execjs
     bcrypt (3.1.13)
     bindex (0.8.1)
     bootsnap (1.4.6)
       msgpack (~> 1.0)
+    bootstrap (4.4.1)
+      autoprefixer-rails (>= 9.1.0)
+      popper_js (>= 1.14.3, < 2)
+      sassc-rails (>= 2.0.0)
     builder (3.2.4)
     byebug (11.1.3)
     capybara (3.33.0)
@@ -92,6 +102,7 @@ GEM
     diff-lcs (1.4.4)
     erubi (1.9.0)
     erubis (2.7.0)
+    execjs (2.7.0)
     factory_bot (6.1.0)
       activesupport (>= 5.0.0)
     factory_bot_rails (6.1.0)
@@ -99,6 +110,8 @@ GEM
       railties (>= 5.0.0)
     ffaker (2.15.0)
     ffi (1.13.1)
+    font-awesome-rails (4.7.0.5)
+      railties (>= 3.2, < 6.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     haml (5.1.2)
@@ -153,6 +166,7 @@ GEM
     nonschema_migrations (5.0.2)
       activerecord (>= 6.0, < 7)
     orm_adapter (0.5.0)
+    popper_js (1.16.0)
     public_suffix (4.0.5)
     puma (4.3.5)
       nio4r (~> 2.0)
@@ -279,12 +293,14 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (>= 1.4.2)
+  bootstrap (~> 4.4.1)
   byebug
   capybara (>= 2.15)
   common_core_js!
   devise
   factory_bot_rails
   ffaker
+  font-awesome-rails
   jbuilder (~> 2.7)
   listen (~> 3.2)
   nonschema_migrations

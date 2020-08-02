@@ -35,7 +35,7 @@ describe ThingsController do
         post :create, xhr: true, format: 'js', params: {
           
             thing: {
-                a: 'Porpoise', b: '643', c_at: '2020-07-31 18:38:43 -0400', user_id: '203'
+                a: 'Elephant', b: '109', c_at: '2020-08-06 18:01:19 -0400', user_id: '307'
         }}
       }.to change { Thing.all.count }.by(1)
       assert_response :ok
@@ -76,7 +76,7 @@ describe ThingsController do
             
             id: thing.id,
             thing: {
-                a: 'Shrew', b: '714', c_at: '2020-08-03 18:38:43 -0400', user_id: '208'
+                a: 'Elk', b: '416', c_at: '2020-08-02 18:01:19 -0400', user_id: '842'
             }}
 
       assert_response :ok
@@ -87,7 +87,7 @@ describe ThingsController do
     #       params: {
     #         id: thing.id,
     #         thing: {
-    #           a: 'Coyote', b: '129', c_at: '2020-07-31 18:38:43 -0400', user_id: '211'
+    #           a: 'Pigeon', b: '562', c_at: '2020-08-05 18:01:19 -0400', user_id: '622'
     #       }}
     #
     #   assert_response :ok
